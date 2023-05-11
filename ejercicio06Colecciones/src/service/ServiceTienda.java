@@ -25,7 +25,7 @@ public void menu(){
 	System.out.println("1. CARGAR PRODUCTOS");
 	System.out.println("2. MODIFICAR PRECIOS:");
 	System.out.println("3. ELIMINAR PRODUCTOS: ");
-	System.out.println("4. SALIR DEL PROGRAMA(presione 0 para salir)");
+	System.out.println("4. SALIR DEL PROGRAMA");
 	System.out.println("//////////////////////////////////////////////////");
 	System.out.println("INGRESE UNA OPCION");
 	opc = leer.nextInt();
@@ -62,7 +62,7 @@ public void menu(){
 	    op = leer.nextInt();
 
 	}
-
+	 System.out.println("****************STOCK******************");
 	for (Map.Entry<String, Double> entry : lista.entrySet()) {
 	    String key = entry.getKey();
 	    Double value = entry.getValue();
@@ -86,6 +86,7 @@ public void menu(){
 	   
 	}
 	lista.put(buscar, nuevoPrecio);
+	     System.out.println("********************LISTA PRECIOS ACTUALIZADAS*********");
 	for (Map.Entry<String, Double> entry : lista.entrySet()) {
 	    String key = entry.getKey();
 	    Double value = entry.getValue();
@@ -104,7 +105,7 @@ public void eliminarProduto(){
     String eliminar = leer.next().toUpperCase();
     if(actual.equals(eliminar));
     lista.remove(eliminar);
-
+ System.out.println("************* STOCK ACTUALIZADO*******");
     for (Map.Entry<String, Double> entry : lista.entrySet()) {
 	String key = entry.getKey();
 	Double value = entry.getValue();
