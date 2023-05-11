@@ -73,29 +73,33 @@ public void menu(){
     }
 
     public void modificarPrecio() {
-	ArrayList<String> actual = new ArrayList();
-	ArrayList<Double> cambio = new ArrayList();
-	System.out.println("Que precio desea modificar:");
-	String buscar = leer.next().toUpperCase();
-	System.out.println("ingrese precio nuevo");
-	Double nuevoPrecio = leer.nextDouble();
-	Boolean bandera = false;
-	if (actual.contains(buscar)) {
-	    cambio.remove(buscar);
-	    bandera = true;
-	   
+	System.out.println("Ingrese el nombre del producto que desea modificar");
+	String productoabuscar = leer.next();
+	Double precio;
+	boolean respuesta = false;
+	for (Map.Entry<String, Double> producto : lista.entrySet()) {
+	    if (productoabuscar.equalsIgnoreCase(producto.getKey())) {
+
+		System.out.println("Ingrese el precio deseado");
+		precio = leer.nextDouble();
+		respuesta = true;
+		producto.setValue(precio);
+		
+		
+	    }
 	}
-	lista.put(buscar, nuevoPrecio);
-	     System.out.println("********************LISTA PRECIOS ACTUALIZADAS*********");
+	if (respuesta) {
+
+	} else {
+	    System.out.println("El producto no esta en el stock");
+	}
 	for (Map.Entry<String, Double> entry : lista.entrySet()) {
 	    String key = entry.getKey();
 	    Double value = entry.getValue();
-
+	System.out.println("**************LISTA PRECIOS ACTUALIZADA**************************");
 	    System.out.println("Producto - " + entry.getKey() + " Precio por kg. = $" + entry.getValue());
-
-	   
 	}
-
+	
     }
 
 
